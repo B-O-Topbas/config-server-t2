@@ -6,6 +6,9 @@ spring:
       resourceserver:
         jwt:
           jwk-set-uri: http://localhost:8080/realms/RentACarMicroservice/protocol/openid-connect/certs
+  zipkin:
+    base-url: http://localhost:9411
+  
   datasource:
     username: postgres
     password: 'serversql'
@@ -42,3 +45,18 @@ eureka:
     prefer-ip-address: true
 server:
   port: 0
+
+management:
+  endpoint:
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  metrics:
+    export:
+      prometheus:
+        enabled: true
