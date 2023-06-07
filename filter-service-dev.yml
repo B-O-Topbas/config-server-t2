@@ -1,7 +1,7 @@
 spring:
   application:
     name: filter-service
-    security:
+  security:
     oauth2:
       resourceserver:
         jwt:
